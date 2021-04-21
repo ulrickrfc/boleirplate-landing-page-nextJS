@@ -20,8 +20,7 @@ export default function Home() {
         Portfolio
         Team
         Pricing
-        Frequently Asked Questions
-        Contact Section */}
+        Frequently Asked Questions */}
         <Contact />
       </main>
       <Footer />
