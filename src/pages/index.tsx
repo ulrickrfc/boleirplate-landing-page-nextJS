@@ -1,3 +1,4 @@
+import { About } from "../components/About";
 import { BackToTop } from "../components/BackToTop";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
@@ -10,8 +11,8 @@ export default function Home() {
       <Header />
       <Hero />
       <main>
-        {/* About
-        Counts
+        <About />
+        {/* Counts
         About Video
         Clients
         Testimonials
