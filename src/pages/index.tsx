@@ -7,6 +7,7 @@ import { Hero } from "../components/Hero";
 import { Counts } from "../components/Counts";
 import { About_Video } from "../components/About_Video";
 import { Clients } from "../components/Clients";
+import { Testimonials } from "../components/Testimonials";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <Counts />
         <About_Video/>
         <Clients />
+        <Testimonials />
 
         {/* 
         Testimonials
