@@ -10,6 +10,7 @@ import { Clients } from "../components/Clients";
 import { Testimonials } from "../components/Testimonials"; //bug
 import { Services } from "../components/Services"
 import { Cta } from "../components/Cta"
+import { Portfolio } from "../components/Portfolio";
 
 
 export default function Home() {
@@ -25,8 +26,8 @@ export default function Home() {
         {/* Testimonials */}
         <Services />
         <Cta />
+        <Portfolio />
         {/* 
-        Portfolio
         Team
         Pricing
         Frequently Asked Questions */}
