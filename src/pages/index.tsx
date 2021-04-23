@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
 import { Counts } from "../components/Counts";
+import { About_Video } from "../components/About_Video";
 
 
 export default function Home() {
@@ -15,9 +16,9 @@ export default function Home() {
       <main>
         <About />
         <Counts />
+        <About_Video/>
 
         {/* 
-        Counts
         About Video
         Clients
         Testimonials
