@@ -19,7 +19,6 @@ export default function Home() {
         <About_Video/>
 
         {/* 
-        About Video
         Clients
         Testimonials
         Services
