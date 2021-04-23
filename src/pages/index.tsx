@@ -11,6 +11,8 @@ import { Testimonials } from "../components/Testimonials"; //bug
 import { Services } from "../components/Services"
 import { Cta } from "../components/Cta"
 import { Portfolio } from "../components/Portfolio";
+import { Team } from "../components/Team";
+
 
 
 export default function Home() {
@@ -27,8 +29,8 @@ export default function Home() {
         <Services />
         <Cta />
         <Portfolio />
+        <Team />
         {/* 
-        Team
         Pricing
         Frequently Asked Questions */}
         <Contact />
