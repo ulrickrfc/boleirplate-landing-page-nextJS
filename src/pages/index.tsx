@@ -12,6 +12,7 @@ import { Services } from "../components/Services"
 import { Cta } from "../components/Cta"
 import { Portfolio } from "../components/Portfolio";
 import { Team } from "../components/Team";
+import { Pricing } from "../components/Pricing";
 
 
 
@@ -30,8 +31,8 @@ export default function Home() {
         <Cta />
         <Portfolio />
         <Team />
+        <Pricing />
         {/* 
-        Pricing
         Frequently Asked Questions */}
         <Contact />
       </main>
