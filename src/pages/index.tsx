@@ -13,6 +13,7 @@ import { Cta } from "../components/Cta"
 import { Portfolio } from "../components/Portfolio";
 import { Team } from "../components/Team";
 import { Pricing } from "../components/Pricing";
+import { FQA } from "../components/FQA";
 
 
 
@@ -26,14 +27,13 @@ export default function Home() {
         <Counts />
         <About_Video/>
         <Clients />
-        {/* Testimonials */}
+        {/* Testimonials BUG */}
         <Services />
         <Cta />
         <Portfolio />
         <Team />
         <Pricing />
-        {/* 
-        Frequently Asked Questions */}
+        <FQA /> {/* Frequently Asked Questions */}
         <Contact />
       </main>
       <Footer />
