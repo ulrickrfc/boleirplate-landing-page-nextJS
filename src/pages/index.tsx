@@ -9,6 +9,7 @@ import { About_Video } from "../components/About_Video";
 import { Clients } from "../components/Clients";
 import { Testimonials } from "../components/Testimonials"; //bug
 import { Services } from "../components/Services"
+import { Cta } from "../components/Cta"
 
 
 export default function Home() {
@@ -23,9 +24,8 @@ export default function Home() {
         <Clients />
         {/* Testimonials */}
         <Services />
+        <Cta />
         {/* 
-        Services
-        Cta
         Portfolio
         Team
         Pricing
