@@ -31,6 +31,7 @@ export default class MyDocument extends Document {
           <script src="/vendor/isotope-layout/isotope.pkgd.min.js" />
           <script src="/vendor/aos/aos.js" />
           <script src="/js/main.js" />
+          <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
         </Head>
         <body>
           <Main />

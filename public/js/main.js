@@ -4,6 +4,8 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+// import $ from 'jquery';
+// import jQuery from 'jquery';
 !(function($) {
   "use strict";
 
@@ -198,11 +200,12 @@
   });
 
   // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      autoplay: true,
+      dots: true,
+      loop: true,
+    });
   });
 
   // Init AOS
