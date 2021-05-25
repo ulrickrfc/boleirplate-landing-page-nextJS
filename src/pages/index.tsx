@@ -26,14 +26,13 @@ const Testimonials = dynamic(() => {
 }, { ssr: false });
 
 
-export default function Home({ logo, hero }: LandingPageProps) {
-
+export default function Home({ logo, hero, AboutUs }: LandingPageProps) {
   return (
     <>
       <Header logo={logo} />
       <Hero hero={hero} />
       <main>
-        <About />
+        <About about={AboutUs} />
         <Counts />
         <About_Video />
         <Clients />

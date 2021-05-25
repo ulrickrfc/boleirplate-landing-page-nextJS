@@ -5,7 +5,6 @@ type Props = {
 }
 
 export function Hero({ hero }: Props) {
-  console.log(hero)
   return (
     <section id="hero" className="d-flex align-items-center">
       <div className="container position-relative" data-aos="fade-up" data-aos-delay="100">
