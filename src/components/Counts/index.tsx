@@ -1,43 +1,50 @@
-export function Counts(){
-  return(
+import { countsProps } from "../../types/api"
+
+type Props = {
+  counts: countsProps
+}
+
+export function Counts({ counts }: Props) {
+  console.log(counts)
+  return (
     <>
-    <section id="counts" className="counts section-bg">
-      <div className="container">
+      <section id="counts" className="counts section-bg">
+        <div className="container">
 
-        <div className="row justify-content-end">
+          <div className="row justify-content-end">
 
-          <div className="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-            <div className="count-box">
-              <span data-toggle="counter-up">65</span>
-              <p>Happy Clients</p>
+            <div className="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+              <div className="count-box">
+                <span data-toggle="counter-up">{counts.countItem[0].countNumber}</span>
+                <p>{counts.countItem[0].countTitle}</p>
+              </div>
             </div>
-          </div>
 
-          <div className="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-            <div className="count-box">
-              <span data-toggle="counter-up">85</span>
-              <p>Projects</p>
+            <div className="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+              <div className="count-box">
+                <span data-toggle="counter-up">{counts.countItem[1].countNumber}</span>
+                <p>{counts.countItem[1].countTitle}</p>
+              </div>
             </div>
-          </div>
 
-          <div className="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-            <div className="count-box">
-              <span data-toggle="counter-up">12</span>
-              <p>Years of experience</p>
+            <div className="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+              <div className="count-box">
+                <span data-toggle="counter-up">{counts.countItem[2].countNumber}</span>
+                <p>{counts.countItem[2].countTitle}</p>
+              </div>
             </div>
-          </div>
 
-          <div className="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-            <div className="count-box">
-              <span data-toggle="counter-up">15</span>
-              <p>Awards</p>
+            <div className="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+              <div className="count-box">
+                <span data-toggle="counter-up">{counts.countItem[3].countNumber}</span>
+                <p>{counts.countItem[3].countTitle}</p>
+              </div>
             </div>
+
           </div>
 
         </div>
-
-      </div>
-    </section>
+      </section>
     </>
   )
 }

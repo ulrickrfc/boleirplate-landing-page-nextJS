@@ -40,12 +40,22 @@ AboutButton{
 }
 }
 
+fragment counts on LandingPage{
+counts{
+countItem{
+  countTitle
+  countNumber
+}
+}
+}
+
 
 query GET_LANDING_PAGE{
 landingPage{
 ...logo
 ...hero
 ...aboutUs
+...counts
 
 
 }

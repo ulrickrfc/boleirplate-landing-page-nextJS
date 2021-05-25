@@ -36,8 +36,18 @@ export type AboutUsProps = {
   }
 }
 
+export type countItem = {
+  countTitle: string,
+  countNumber: number
+}
+
+export type countsProps = {
+  countItem: countItem[]
+}
+
 export type LandingPageProps = {
   logo: LogoProps
   hero: HeroProps
   AboutUs: AboutUsProps
+  counts: countsProps
 }
