@@ -14,20 +14,28 @@ import { Team } from "../components/Team";
 import { Pricing } from "../components/Pricing";
 import { FQA } from "../components/FQA";
 
-import dynamic from "next/dynamic";  
-const Testimonials = dynamic(   () => {     
-  return import("../components/Testimonials");   },   { ssr: false } );
+import dynamic from "next/dynamic";
+
+import { GetStaticProps } from "next";
+import client from "../graphql/client";
+import GET_LANDING_PAGE from "../graphql/queries/getLandingPage";
+import { LandingPageProps } from "../types/api";
+
+const Testimonials = dynamic(() => {
+  return import("../components/Testimonials");
+}, { ssr: false });
 
 
-export default function Home() {
+export default function Home({ logo, hero }: LandingPageProps) {
+
   return (
     <>
-      <Header />
-      <Hero />
+      <Header logo={logo} />
+      <Hero hero={hero} />
       <main>
         <About />
         <Counts />
-        <About_Video/>
+        <About_Video />
         <Clients />
         <Testimonials />
         <Services />
@@ -43,3 +51,14 @@ export default function Home() {
     </>
   )
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { landingPage } = await client.request(GET_LANDING_PAGE)
+  console.log(landingPage)
+  return {
+    props: {
+      ...landingPage
+    }
+  }
+}
+
