@@ -1,4 +1,5 @@
 const GET_LANDING_PAGE = /* GraphQL */`
+
 fragment logo on LandingPage{
   logo{
   url
@@ -49,6 +50,53 @@ countItem{
 }
 }
 
+fragment about_video on LandingPage{
+AboutVideo{
+imgVideo{
+  alternativeText
+  url
+}
+videoURL
+title
+subtitle
+list{
+  ItemDescription1
+  ItemDescription2
+  ItemDescription3
+  ItemDescription4
+}
+finalText
+}
+}
+
+fragment clients on LandingPage{
+clients{
+clientLogo1{
+  url
+  alternativeText
+}
+clientLogo2{
+  url
+  alternativeText
+}
+clientLogo3{
+  url
+  alternativeText
+}
+clientLogo4{
+  url
+  alternativeText
+}
+clientLogo5{
+  url
+  alternativeText
+}
+clientLogo6{
+  url
+  alternativeText
+}
+}
+}
 
 query GET_LANDING_PAGE{
 landingPage{
@@ -56,7 +104,8 @@ landingPage{
 ...hero
 ...aboutUs
 ...counts
-
+...about_video
+...clients
 
 }
 }

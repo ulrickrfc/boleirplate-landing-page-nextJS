@@ -5,7 +5,6 @@ type Props = {
 }
 
 export function Counts({ counts }: Props) {
-  console.log(counts)
   return (
     <>
       <section id="counts" className="counts section-bg">

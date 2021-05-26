@@ -5,7 +5,6 @@ type Props = {
 }
 
 export function About({ about }: Props) {
-  console.log(about)
   return (
     <section id="about" className="about">
       <div className="container" data-aos="fade-up">

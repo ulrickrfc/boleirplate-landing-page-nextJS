@@ -26,7 +26,7 @@ const Testimonials = dynamic(() => {
 }, { ssr: false });
 
 
-export default function Home({ logo, hero, AboutUs, counts }: LandingPageProps) {
+export default function Home({ logo, hero, AboutUs, counts, AboutVideo, clients }: LandingPageProps) {
   return (
     <>
       <Header logo={logo} />
@@ -34,8 +34,8 @@ export default function Home({ logo, hero, AboutUs, counts }: LandingPageProps) 
       <main>
         <About about={AboutUs} />
         <Counts counts={counts} />
-        <About_Video />
-        <Clients />
+        <About_Video aboutVideo={AboutVideo} />
+        <Clients clients={clients} />
         <Testimonials />
         <Services />
         <Cta />
@@ -53,7 +53,7 @@ export default function Home({ logo, hero, AboutUs, counts }: LandingPageProps) 
 
 export const getStaticProps: GetStaticProps = async () => {
   const { landingPage } = await client.request(GET_LANDING_PAGE)
-  console.log(landingPage)
+  // console.log(landingPage)
   return {
     props: {
       ...landingPage
