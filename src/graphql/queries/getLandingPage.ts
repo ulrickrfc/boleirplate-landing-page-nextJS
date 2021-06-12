@@ -1,5 +1,6 @@
 const GET_LANDING_PAGE = /* GraphQL */`
 
+
 fragment logo on LandingPage{
   logo{
   url
@@ -98,6 +99,150 @@ clientLogo6{
 }
 }
 
+fragment testimon on LandingPage{
+testimon{
+title
+subtitle
+testimonItem{
+  comment
+  photo{
+    url
+    alternativeText
+  }
+  name
+  job
+}
+}
+}
+
+fragment services on LandingPage{
+services{
+title
+description
+servicesCards{
+  iconClassName
+  title
+  subtitle
+}
+}
+}
+
+fragment callToAction on LandingPage {
+callToAction{
+title
+subtitle
+ctaButton{
+  title
+  buttonURL
+}
+}
+}
+
+fragment portfolio on LandingPage {
+portfolio{
+title
+subtitle
+imgOrders{
+  ordem1
+  ordem2
+  ordem3
+  ordem4
+}
+portfolioImgs{
+  img1{
+    url
+    alternativeText
+  }
+  img2{
+    url
+    alternativeText
+  }
+  img3{
+    url
+    alternativeText
+  }
+  img4{
+    url
+    alternativeText
+  }
+  img5{
+    url
+    alternativeText
+  }
+  img6{
+    url
+    alternativeText
+  }
+  img7{
+    url
+    alternativeText
+  }
+  img8{
+    url
+    alternativeText
+  }
+  img9{
+    url
+    alternativeText
+  }
+}
+}
+}
+
+fragment faq on LandingPage{
+faq{
+title
+subtitle
+questions{
+  question
+  answer
+}
+}
+}
+
+fragment team on LandingPage{
+team{
+title
+description
+teamCards{
+  photo{
+    url
+    alternativeText
+  }
+  name
+  job
+  twitter
+  facebook
+  instagram
+  linkedin
+}
+}
+}
+
+fragment prices on LandingPage{
+prices {
+title
+subtitle
+pricingCards{
+  plan
+  moneyType
+  price
+  period
+  item1
+  item2
+  item3
+  item4
+  item5
+  item1Cut
+  item2Cut
+  item3Cut
+  item4Cut
+  item5Cut
+  buttonValue
+  buttonURL
+}
+}
+}
 query GET_LANDING_PAGE{
 landingPage{
 ...logo
@@ -106,9 +251,17 @@ landingPage{
 ...counts
 ...about_video
 ...clients
+...testimon
+...services
+...callToAction
+...portfolio
+...team
+...prices
+...faq
 
 }
 }
+
 
 `
 export default GET_LANDING_PAGE

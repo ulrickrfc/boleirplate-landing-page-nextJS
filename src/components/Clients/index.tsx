@@ -6,7 +6,6 @@ type Props = {
 }
 
 export function Clients({ clients }: Props) {
-  console.log(clients)
   return (
     <>
       <section id="clients" className="clients section-bg">

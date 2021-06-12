@@ -1,15 +1,21 @@
-export function Cta(){
-  return(
+import { callToActionProps } from "../../types/api"
+
+type Props = {
+  callToAction: callToActionProps
+}
+
+export function Cta({ callToAction }: Props) {
+  return (
     <>
-    <section id="cta" className="cta">
-      <div className="container" data-aos="zoom-in">
-        <div className="text-center">
-          <h3>Call To Action</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a className="cta-btn" href="#">Call To Action</a>
+      <section id="cta" className="cta">
+        <div className="container" data-aos="zoom-in">
+          <div className="text-center">
+            <h3>{callToAction.title}</h3>
+            <p>{callToAction.subtitle}</p>
+            <a className="cta-btn" href={`${callToAction.ctaButton.buttonURL}`}>{callToAction.ctaButton.title}</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   )
 }

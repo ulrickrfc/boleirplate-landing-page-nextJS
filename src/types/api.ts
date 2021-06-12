@@ -89,6 +89,142 @@ export type clientsProps = {
   }
 }
 
+export type testimonItem =
+  {
+    comment: string
+    photo: {
+      url: string
+      alternativeText: string
+    }
+    name: string
+    job: string
+  }
+export type testimonProps = {
+  title: string
+  subtitle: string
+  testimonItem: testimonItem[]
+}
+
+export type servicesCards = {
+  iconClassName: string
+  title: string
+  subtitle: string
+}
+
+export type servicesProps = {
+  title: string
+  description: string
+  servicesCards: servicesCards[]
+}
+
+export type callToActionProps = {
+  title: string
+  subtitle: string
+  ctaButton: {
+    title: string
+    buttonURL: string
+  }
+}
+
+export type portfolioProps = {
+  title: string
+  subtitle: string
+  imgOrders: {
+    ordem1: string
+    ordem2: string
+    ordem3: string
+    ordem4: string
+  }
+  portfolioImgs: {
+    img1: {
+      url: string
+      alternativeText: string
+    }
+    img2: {
+      url: string
+      alternativeText: string
+    }
+    img3: {
+      url: string
+      alternativeText: string
+    }
+    img4: {
+      url: string
+      alternativeText: string
+    }
+    img5: {
+      url: string
+      alternativeText: string
+    }
+    img6: {
+      url: string
+      alternativeText: string
+    }
+    img7: {
+      url: string
+      alternativeText: string
+    }
+    img8: {
+      url: string
+      alternativeText: string
+    }
+    img9: {
+      url: string
+      alternativeText: string
+    }
+  }
+}
+
+export type teamCard = {
+  photo: {
+    url: string
+    alternativeText: string
+  }
+  name: string
+  job: string
+  twitter: string
+  facebook: string
+  instagram: string
+  linkedin: string
+}
+
+export type teamProps = {
+  title: string
+  description: string
+  teamCards: teamCard[]
+}
+export type pricingCard = {
+  plan: string
+  moneyType: string
+  price: number
+  period: string
+  item1: string
+  item2: string
+  item3: string
+  item4: string
+  item5: string
+  item1Cut: boolean
+  item2Cut: boolean
+  item3Cut: boolean
+  item4Cut: boolean
+  item5Cut: boolean
+  buttonValue: string
+  buttonURL: string
+}
+export type pricesProps = {
+  title: string
+  subtitle: string
+  pricingCards: pricingCard[]
+}
+export type question = {
+  question: string
+  answer: string
+}
+export type faqProps = {
+  title: string
+  subtitle: string
+  questions: question[]
+}
 export type LandingPageProps = {
   logo: LogoProps
   hero: HeroProps
@@ -96,4 +232,11 @@ export type LandingPageProps = {
   counts: countsProps
   AboutVideo: AboutVideoProps
   clients: clientsProps
+  testimon: testimonProps
+  services: servicesProps
+  callToAction: callToActionProps
+  portfolio: portfolioProps
+  team: teamProps
+  prices: pricesProps
+  faq: faqProps
 }

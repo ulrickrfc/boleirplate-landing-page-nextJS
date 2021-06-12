@@ -26,7 +26,8 @@ const Testimonials = dynamic(() => {
 }, { ssr: false });
 
 
-export default function Home({ logo, hero, AboutUs, counts, AboutVideo, clients }: LandingPageProps) {
+export default function Home({ logo, hero, AboutUs, counts, AboutVideo, clients, testimon, services, callToAction, portfolio, team, prices, faq }: LandingPageProps) {
+  console.log(faq)
   return (
     <>
       <Header logo={logo} />
@@ -36,13 +37,13 @@ export default function Home({ logo, hero, AboutUs, counts, AboutVideo, clients 
         <Counts counts={counts} />
         <About_Video aboutVideo={AboutVideo} />
         <Clients clients={clients} />
-        <Testimonials />
-        <Services />
-        <Cta />
-        <Portfolio />
-        <Team />
-        <Pricing />
-        <FQA /> {/* Frequently Asked Questions */}
+        <Testimonials testimon={testimon} />
+        <Services services={services} /> { }
+        <Cta callToAction={callToAction} /> { }
+        <Portfolio portfolio={portfolio} />
+        <Team team={team} />
+        <Pricing prices={prices} />
+        <FQA faq={faq} /> {/* Frequently Asked Questions */}
         <Contact />
       </main>
       <Footer />
