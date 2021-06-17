@@ -55,7 +55,7 @@ export function Pricing({ prices }: Props) {
             <div className="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
               <div className="box">
                 <h3>{prices.pricingCards[2].plan}</h3>
-                <h4><sup>{prices.pricingCards[2].moneyType}</sup>{prices.pricingCards[1].price}<span> / {prices.pricingCards[1].period}</span></h4>
+                <h4><sup>{prices.pricingCards[2].moneyType}</sup>{prices.pricingCards[2].price}<span> / {prices.pricingCards[1].period}</span></h4>
                 <ul>
                   <li className={prices.pricingCards[2].item1Cut ? "na" : ""}>{prices.pricingCards[2].item1}</li>
                   <li className={prices.pricingCards[2].item2Cut ? "na" : ""}>{prices.pricingCards[2].item2}</li>

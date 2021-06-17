@@ -20,15 +20,21 @@ import { GetStaticProps } from "next";
 import client from "../graphql/client";
 import GET_LANDING_PAGE from "../graphql/queries/getLandingPage";
 import { LandingPageProps } from "../types/api";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const Testimonials = dynamic(() => {
   return import("../components/Testimonials");
 }, { ssr: false });
 
 
-export default function Home({ logo, hero, AboutUs, counts, AboutVideo, clients, testimon, services, callToAction, portfolio, team, prices, faq }: LandingPageProps) {
-  console.log(faq)
+export default function Home({ logo, hero, AboutUs, counts, AboutVideo, clients, testimon, services, callToAction, portfolio, team, prices, faq, contact }: LandingPageProps) {
+  const client = new ApolloClient({
+    uri: 'http://localhost:1337/graphql',
+    cache: new InMemoryCache()
+  })
+
   return (
+
     <>
       <Header logo={logo} />
       <Hero hero={hero} />
@@ -44,7 +50,9 @@ export default function Home({ logo, hero, AboutUs, counts, AboutVideo, clients,
         <Team team={team} />
         <Pricing prices={prices} />
         <FQA faq={faq} /> {/* Frequently Asked Questions */}
-        <Contact />
+        <ApolloProvider client={client}>
+          <Contact contact={contact} />
+        </ApolloProvider>
       </main>
       <Footer />
       <BackToTop />

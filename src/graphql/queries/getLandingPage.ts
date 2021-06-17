@@ -1,6 +1,7 @@
 const GET_LANDING_PAGE = /* GraphQL */`
 
 
+
 fragment logo on LandingPage{
   logo{
   url
@@ -243,6 +244,17 @@ pricingCards{
 }
 }
 }
+
+fragment contact on LandingPage {
+contact{
+title
+subtitle
+location
+email
+phone
+locationIframe
+}
+}
 query GET_LANDING_PAGE{
 landingPage{
 ...logo
@@ -258,10 +270,9 @@ landingPage{
 ...team
 ...prices
 ...faq
-
+...contact
 }
 }
-
 
 `
 export default GET_LANDING_PAGE

@@ -225,6 +225,15 @@ export type faqProps = {
   subtitle: string
   questions: question[]
 }
+
+export type contactProps = {
+  title: string
+  subtitle: string
+  location: string
+  email: string
+  phone: string
+  locationIframe: string
+}
 export type LandingPageProps = {
   logo: LogoProps
   hero: HeroProps
@@ -239,4 +248,5 @@ export type LandingPageProps = {
   team: teamProps
   prices: pricesProps
   faq: faqProps
+  contact: contactProps
 }

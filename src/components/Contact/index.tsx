@@ -1,15 +1,65 @@
-export function Contact () {
+import { gql, useMutation } from '@apollo/client'
+import { useState } from 'react'
+import { contactProps } from '../../types/api'
+
+export type Props = {
+  contact: contactProps
+}
+
+export function Contact({ contact }: Props) {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [subject, setSubject] = useState("")
+  const [message, setMessage] = useState("")
+
+
+
+
+  const ADD_CONTACT = gql`
+    mutation CREATE_CONTACT($input:createContactInput!){
+      createContact(input:$input){
+        contact{
+          name
+          email
+          subject
+          message
+        }
+      }
+      }
+  `
+  const [createContact] = useMutation(ADD_CONTACT)
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault
+
+    createContact({
+      variables: {
+        input: {
+          data: {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+          }
+        }
+      }
+    })
+  }
+
+
+  //   console.log(useMutation(ADD_CONTACT))
+
   return (
     <section id="contact" className="contact">
       <div className="container" data-aos="fade-up">
 
         <div className="section-title">
-          <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{contact.title}</h2>
+          <p>{contact.subtitle}</p>
         </div>
 
         <div>
-          <iframe style={{border: 0, width: "100%", height: "270px"}} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameBorder="0" allowFullScreen></iframe>
+          <iframe style={{ border: 0, width: "100%", height: "270px" }} src={contact.locationIframe} frameBorder="0" allowFullScreen></iframe>
         </div>
 
         <div className="row mt-5">
@@ -18,20 +68,20 @@ export function Contact () {
             <div className="info">
               <div className="address">
                 <i className="icofont-google-map"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4>Localização:</h4>
+                <p>{contact.location}</p>
               </div>
 
               <div className="email">
                 <i className="icofont-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>{contact.email}</p>
               </div>
 
               <div className="phone">
                 <i className="icofont-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h4>Telefone:</h4>
+                <p>{contact.phone}</p>
               </div>
 
             </div>
@@ -40,23 +90,23 @@ export function Contact () {
 
           <div className="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" className="php-email-form">
+            <form onSubmit={handleSubmit} method="post" role="form" className="php-email-form">
               <div className="form-row">
                 <div className="col-md-6 form-group">
-                  <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input onChange={e => setName(e.target.value)} type="text" name="name" className="form-control" id="name" placeholder="Seu Nome" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div className="validate"></div>
                 </div>
                 <div className="col-md-6 form-group">
-                  <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" onChange={e => setEmail(e.target.value)} className="form-control" name="email" id="email" placeholder="Seu Email" data-rule="email" data-msg="Please enter a valid email" />
                   <div className="validate"></div>
                 </div>
               </div>
               <div className="form-group">
-                <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" onChange={e => setSubject(e.target.value)} className="form-control" name="subject" id="subject" placeholder="Assunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div className="validate"></div>
               </div>
               <div className="form-group">
-                <textarea className="form-control" name="message" rows={5} data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea className="form-control" onChange={e => setMessage(e.target.value)} name="message" rows={5} data-rule="required" data-msg="Please write something for us" placeholder="Messagem"></textarea>
                 <div className="validate"></div>
               </div>
               <div className="mb-3">
@@ -64,7 +114,7 @@ export function Contact () {
                 <div className="error-message"></div>
                 <div className="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div className="text-center"><button type="submit">Send Message</button></div>
+              <div className="text-center"><button type="submit">Enviar Mensagem</button></div>
             </form>
 
           </div>
