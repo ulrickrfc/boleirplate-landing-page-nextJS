@@ -234,6 +234,27 @@ export type contactProps = {
   phone: string
   locationIframe: string
 }
+export type links = {
+  Link: string
+  LinkURL: string
+}
+export type socialMediaLinks = {
+  socialMedia_classIcon: string
+  socialMedia_url: string
+}
+export type footerProps = {
+  street: string
+  company_name: string
+  phone: string
+  country: string
+  email: string
+  city_state: string
+  newsLetter_title: string
+  newsLetter_subtitle: string
+  linkList1: links[]
+  linkList2: links[]
+  socialLinks: socialMediaLinks[]
+}
 export type LandingPageProps = {
   logo: LogoProps
   hero: HeroProps
@@ -249,4 +270,5 @@ export type LandingPageProps = {
   prices: pricesProps
   faq: faqProps
   contact: contactProps
+  footer: footerProps
 }

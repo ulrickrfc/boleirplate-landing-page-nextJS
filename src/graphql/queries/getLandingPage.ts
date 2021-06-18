@@ -252,9 +252,36 @@ subtitle
 location
 email
 phone
-locationIframe
 }
 }
+
+fragment footer on LandingPage {
+footer{
+street
+company_name
+phone
+country
+email
+city_state
+newsLetter_title
+newsLetter_subtitle
+    linkList1{
+  Link
+  LinkURL
+  }
+linkList2{
+  Link
+  LinkURL
+  }
+socialLinks{
+socialMedia_classIcon
+socialMedia_url
+}
+}
+}
+
+
+
 query GET_LANDING_PAGE{
 landingPage{
 ...logo
@@ -271,6 +298,7 @@ landingPage{
 ...prices
 ...faq
 ...contact
+...footer
 }
 }
 

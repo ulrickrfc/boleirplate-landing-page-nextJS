@@ -27,35 +27,35 @@ const Testimonials = dynamic(() => {
 }, { ssr: false });
 
 
-export default function Home({ logo, hero, AboutUs, counts, AboutVideo, clients, testimon, services, callToAction, portfolio, team, prices, faq, contact }: LandingPageProps) {
+export default function Home({ logo, hero, AboutUs, counts, AboutVideo, clients, testimon, services, callToAction, portfolio, team, prices, faq, contact, footer }: LandingPageProps) {
   const client = new ApolloClient({
     uri: 'http://localhost:1337/graphql',
     cache: new InMemoryCache()
   })
-
   return (
 
     <>
-      <Header logo={logo} />
-      <Hero hero={hero} />
-      <main>
-        <About about={AboutUs} />
-        <Counts counts={counts} />
-        <About_Video aboutVideo={AboutVideo} />
-        <Clients clients={clients} />
-        <Testimonials testimon={testimon} />
-        <Services services={services} /> { }
-        <Cta callToAction={callToAction} /> { }
-        <Portfolio portfolio={portfolio} />
-        <Team team={team} />
-        <Pricing prices={prices} />
-        <FQA faq={faq} /> {/* Frequently Asked Questions */}
-        <ApolloProvider client={client}>
+      <ApolloProvider client={client}>
+        <Header logo={logo} />
+        <Hero hero={hero} />
+        <main>
+          <About about={AboutUs} />
+          <Counts counts={counts} />
+          <About_Video aboutVideo={AboutVideo} />
+          <Clients clients={clients} />
+          <Testimonials testimon={testimon} />
+          <Services services={services} /> { }
+          <Cta callToAction={callToAction} /> { }
+          <Portfolio portfolio={portfolio} />
+          <Team team={team} />
+          <Pricing prices={prices} />
+          <FQA faq={faq} /> {/* Frequently Asked Questions */}
           <Contact contact={contact} />
-        </ApolloProvider>
-      </main>
-      <Footer />
-      <BackToTop />
+        </main>
+        <Footer footer={footer} />
+        <BackToTop />
+      </ApolloProvider>
+
     </>
   )
 }
